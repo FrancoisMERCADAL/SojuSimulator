@@ -6,21 +6,29 @@ using System.Threading.Tasks;
 
 namespace SojuSimulator3000
 {
-    class Joueur
+    public class Joueur : IComparable<Joueur>
     {
         float money;
         int numberOfSalary;
-        int numberOfMachin;
+        List<Machin> numberOfMachin;
         int spendMarketing;
         string name;
         int stockNormalSoju;
         int stockPremiumSoju;
+        float priceSellBottleSojuNormal;
+        float priceSellBottleSojuPremium;
         Market market;
+
+        public string Name { get => name; set => name = value; }
+        public float Money { get => money; set => money = value; }
+        public int NumberOfSalary { get => numberOfSalary; set => numberOfSalary = value; }
+        public List<Machin> NumberOfMachin { get => numberOfMachin; set => numberOfMachin = value; }
+
         public Joueur(string name, float money, Market market)
         {
             this.name = name;
             this.money = money;
-            numberOfMachin = 0;
+            numberOfMachin = new List<Machin>();
             numberOfSalary = 0;
             stockNormalSoju = 0;
             stockPremiumSoju = 0;
@@ -31,7 +39,8 @@ namespace SojuSimulator3000
             stockNormalSoju += numberOfNormalSoju;
             stockPremiumSoju += numberOfPremiumSoju;
             money -= numberOfSalary * market.SalaryWorker;
-            money -= numberOfMachin * market.MaintenanceMachin;
+            for(int i =0;i<numberOfMachin.Count;i++)
+                money -= numberOfMachin[i].PriceMaintenance;
             money -= numberOfNormalSoju * market.PriceIngredientsSojuNormal;
             money -= numberOfPremiumSoju * market.PriceIngredientsSojuPremium;
         }
@@ -39,12 +48,12 @@ namespace SojuSimulator3000
         {
             stockNormalSoju -= sellNormalSoju;
             stockPremiumSoju -= sellPremiumSoju;
-            money += sellNormalSoju * market.PriceSellBottleSojuNormal;
-            money += sellPremiumSoju * market.PriceSellBottleSojuPremium;
+            money += sellNormalSoju * priceSellBottleSojuNormal;
+            money += sellPremiumSoju * priceSellBottleSojuPremium;
         }
-        public void BuyANewMachin()
+        public void BuyANewMachinClassic()
         {
-            numberOfMachin++;
+            numberOfMachin.Add(new Machin(5,2000,1000));
             money -= market.ValueMachin;
         }
         public void HireNewSalary()
@@ -56,6 +65,16 @@ namespace SojuSimulator3000
         {
             numberOfSalary--;
             money -= market.FireWorker;
+        }
+        public int CompareTo(Joueur autre)
+        {
+            int val = 0;
+            if (this.money.CompareTo(autre.money) < 0)
+                val = -1;
+            if (this.money.CompareTo(autre.money) > 0)
+                val = 1;
+            return val;
+
         }
     }
 }

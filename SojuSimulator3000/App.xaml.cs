@@ -13,5 +13,6 @@ namespace SojuSimulator3000
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

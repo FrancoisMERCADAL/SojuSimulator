@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SojuSimulator3000
 {
-    class Market
+    public class Market
     {
         int valueMachin;//Cost to buy a new machin
         int hireWorker;//Cost to hire someone
@@ -15,9 +15,9 @@ namespace SojuSimulator3000
         int maintenanceMachin;//Cost of machin every turn
         float priceIngredientsSojuNormal;
         float priceIngredientsSojuPremium;
-        float priceSellBottleSojuNormal;
-        float priceSellBottleSojuPremium;
-        public Market(int valueMachin, int hireWorker, int fireWorker,int salaryWorker, int maintenanceMachin, float priceIngredientsSojuNormal, float priceIngredientsSojuPremium, float priceSellBottleSojuNormal, float priceSellBottleSojuPremium)
+        List<int> estimationSojuNormalSell;
+        List<int> estimationSojuPremiumSell;
+        public Market(int valueMachin, int hireWorker, int fireWorker,int salaryWorker, int maintenanceMachin, float priceIngredientsSojuNormal, float priceIngredientsSojuPremium)
         {
             this.valueMachin = valueMachin;
             this.hireWorker = hireWorker;
@@ -26,8 +26,6 @@ namespace SojuSimulator3000
             this.maintenanceMachin = maintenanceMachin;
             this.priceIngredientsSojuNormal = priceIngredientsSojuNormal;
             this.priceIngredientsSojuPremium = priceIngredientsSojuPremium;
-            this.priceSellBottleSojuNormal = priceSellBottleSojuNormal;
-            this.priceSellBottleSojuPremium = priceSellBottleSojuPremium;
         }
 
         public int ValueMachin { get => valueMachin; set => valueMachin = value; }
@@ -37,7 +35,7 @@ namespace SojuSimulator3000
         public int MaintenanceMachin { get => maintenanceMachin; set => maintenanceMachin = value; }
         public float PriceIngredientsSojuNormal { get => priceIngredientsSojuNormal; set => priceIngredientsSojuNormal = value; }
         public float PriceIngredientsSojuPremium { get => priceIngredientsSojuPremium; set => priceIngredientsSojuPremium = value; }
-        public float PriceSellBottleSojuNormal { get => priceSellBottleSojuNormal; set => priceSellBottleSojuNormal = value; }
-        public float PriceSellBottleSojuPremium { get => priceSellBottleSojuPremium; set => priceSellBottleSojuPremium = value; }
+        public List<int> EstimationSojuNormalSell { get => estimationSojuNormalSell; set => estimationSojuNormalSell = value; }
+        public List<int> EstimationSojuPremiumSell { get => estimationSojuPremiumSell; set => estimationSojuPremiumSell = value; }
     }
 }
