@@ -1,0 +1,15 @@
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\bin\Debug\SojuSimulator3000.exe.config
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\bin\Debug\SojuSimulator3000.exe
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\bin\Debug\SojuSimulator3000.pdb
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.csprojAssemblyReference.cache
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\MainWindow.g.cs
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\App.g.cs
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000_MarkupCompile.cache
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000_MarkupCompile.lref
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\MainWindow.baml
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.g.resources
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.Properties.Resources.resources
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.csproj.GenerateResource.cache
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.csproj.CoreCompileInputs.cache
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.exe
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\SojuSimulator3000.pdb
