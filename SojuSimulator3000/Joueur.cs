@@ -17,12 +17,15 @@ namespace SojuSimulator3000
         int stockPremiumSoju;
         float priceSellBottleSojuNormal;
         float priceSellBottleSojuPremium;
+        float proportionSellOfThisTurnNormalSoju;
         Market market;
 
         public string Name { get => name; set => name = value; }
         public float Money { get => money; set => money = value; }
         public int NumberOfSalary { get => numberOfSalary; set => numberOfSalary = value; }
         public List<Machin> NumberOfMachin { get => numberOfMachin; set => numberOfMachin = value; }
+        public int SpendMarketing { get => spendMarketing; set => spendMarketing = value; }
+        public float ProportionSellOfThisTurnNormalSoju { get => proportionSellOfThisTurnNormalSoju; set => proportionSellOfThisTurnNormalSoju = value; }
 
         public Joueur(string name, float money, Market market)
         {
@@ -30,6 +33,9 @@ namespace SojuSimulator3000
             this.money = money;
             numberOfMachin = new List<Machin>();
             numberOfSalary = 0;
+            spendMarketing = 0;
+            priceSellBottleSojuNormal = 0;
+            priceSellBottleSojuPremium = 0;
             stockNormalSoju = 0;
             stockPremiumSoju = 0;
             this.market = market;
@@ -51,16 +57,25 @@ namespace SojuSimulator3000
             money += sellNormalSoju * priceSellBottleSojuNormal;
             money += sellPremiumSoju * priceSellBottleSojuPremium;
         }
+        /// <summary>
+        /// Function to buy the classic machin and add it to the company
+        /// </summary>
         public void BuyANewMachinClassic()
         {
             numberOfMachin.Add(new Machin(5,2000,1000));
             money -= market.ValueMachin;
         }
+        /// <summary>
+        /// Method to add a salary to the company
+        /// </summary>
         public void HireNewSalary()
         {
             numberOfSalary++;
             money -= market.HireWorker;
         }
+        /// <summary>
+        /// Function to fire a salary of the company
+        /// </summary>
         public void FireSalary()
         {
             numberOfSalary--;
@@ -75,6 +90,60 @@ namespace SojuSimulator3000
                 val = 1;
             return val;
 
+        }
+        /// <summary>
+        /// Sort the list of player according to marketing
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
+        static public int TriMarketing(Joueur j1, Joueur j2)
+        {
+            return j1.spendMarketing.CompareTo(j2.spendMarketing);
+        }
+
+        /// <summary>
+        /// Sort the list of player according to price of normal soju that each player choose
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
+        static public int TriSellNormalSoju(Joueur j1, Joueur j2)
+        {
+            return j1.priceSellBottleSojuNormal.CompareTo(j2.priceSellBottleSojuNormal);
+        }
+
+        /// <summary>
+        /// Sort the list of player according to price of premium soju that each player choose
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
+        static public int TriSellPremiumSoju(Joueur j1, Joueur j2)
+        {
+            return j1.priceSellBottleSojuPremium.CompareTo(j2.priceSellBottleSojuPremium);
+        }
+
+        /// <summary>
+        /// Sort the list of player according to the stock of normal soju
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
+        static public int TriStockNormalSoju(Joueur j1, Joueur j2)
+        {
+            return j1.stockNormalSoju.CompareTo(j2.stockNormalSoju);
+        }
+
+        /// <summary>
+        /// Sort the list of player according to the stock of premium soju
+        /// </summary>
+        /// <param name="j1"></param>
+        /// <param name="j2"></param>
+        /// <returns></returns>
+        static public int TriStockPremiumSoju(Joueur j1, Joueur j2)
+        {
+            return j1.stockPremiumSoju.CompareTo(j2.stockPremiumSoju);
         }
     }
 }

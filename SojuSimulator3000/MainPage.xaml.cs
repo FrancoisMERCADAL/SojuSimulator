@@ -32,6 +32,8 @@ namespace SojuSimulator3000
             this.market = market;
             this.numberOfTurn = numberOfTurn;
             this.turn = 1;
+            TexteClassement();
+            TexteInformationTurn();
         }
         public MainPage(List<Joueur> listPlayer, Market market, int numberOfTurn, int turn)
         {
@@ -40,6 +42,8 @@ namespace SojuSimulator3000
             this.market = market;
             this.numberOfTurn = numberOfTurn;
             this.turn = turn;
+            TexteClassement();
+            TexteInformationTurn();
         }
         public void TexteClassement()
         {
@@ -47,14 +51,16 @@ namespace SojuSimulator3000
             textRanking = "The actual ranking is : \n";
             for(int i = 0;i<listPlayer.Count;i++)
             {
-                textRanking += i + ") " + listPlayer[i].Name + " with " + listPlayer[i].Money + "€.";
+                textRanking += (i+1) + ") " + listPlayer[i].Name + " with " + listPlayer[i].Money + "€.\n";
             }
+            labelRanking.Content = textRanking;
         }
         public void TexteInformationTurn()
         {
             textNextTurn = "Here the estimation of this year : \n";
-            textNextTurn += "Sell of Normal Soju :" + market.EstimationSojuNormalSell[turn-1];
-            textNextTurn += "\nSell of Premium Soju : " + market.EstimationSojuPremiumSell[turn-1];
+            //textNextTurn += "Sell of Normal Soju :" + market.EstimationSojuNormalSell[turn-1];
+            //textNextTurn += "\nSell of Premium Soju : " + market.EstimationSojuPremiumSell[turn-1];
+            informationTurn.Content = textNextTurn;
         }
 
         private void Next(object sender, RoutedEventArgs e)
