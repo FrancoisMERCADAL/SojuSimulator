@@ -28,6 +28,11 @@ namespace SojuSimulator3000
                 NumberOfPlayer.Items.Add(Convert.ToString(i));
             money = 1000000;
             market = new Market(100000, 10000, 10000, 5000, 1000, 0.4f, 0.6f);
+            for (int i = 0; i < 15; i++)
+            {
+                market.EstimationSojuNormalSell.Add(10000 + i * 5000);
+                market.EstimationSojuPremiumSell.Add(2000 + i * 2500);
+            }
         }
         private void NumberOfPlayer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

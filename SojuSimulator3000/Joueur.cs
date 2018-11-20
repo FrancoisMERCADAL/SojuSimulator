@@ -26,6 +26,9 @@ namespace SojuSimulator3000
         public List<Machin> NumberOfMachin { get => numberOfMachin; set => numberOfMachin = value; }
         public int SpendMarketing { get => spendMarketing; set => spendMarketing = value; }
         public float ProportionSellOfThisTurnNormalSoju { get => proportionSellOfThisTurnNormalSoju; set => proportionSellOfThisTurnNormalSoju = value; }
+        public int StockNormalSoju { get => stockNormalSoju; set => stockNormalSoju = value; }
+        public float PriceSellBottleSojuNormal { get => priceSellBottleSojuNormal; set => priceSellBottleSojuNormal = value; }
+        public float PriceSellBottleSojuPremium { get => priceSellBottleSojuPremium; set => priceSellBottleSojuPremium = value; }
 
         public Joueur(string name, float money, Market market)
         {
@@ -50,12 +53,21 @@ namespace SojuSimulator3000
             money -= numberOfNormalSoju * market.PriceIngredientsSojuNormal;
             money -= numberOfPremiumSoju * market.PriceIngredientsSojuPremium;
         }
-        public void SellSoju(int sellNormalSoju, int sellPremiumSoju)
+        public int SellSoju(int turn)
         {
-            stockNormalSoju -= sellNormalSoju;
-            stockPremiumSoju -= sellPremiumSoju;
-            money += sellNormalSoju * priceSellBottleSojuNormal;
-            money += sellPremiumSoju * priceSellBottleSojuPremium;
+            int reste = 0;
+            stockNormalSoju -= Convert.ToInt32(market.EstimationSojuNormalSell[turn-1]*proportionSellOfThisTurnNormalSoju);
+            int vente = Convert.ToInt32(market.EstimationSojuNormalSell[turn - 1] * proportionSellOfThisTurnNormalSoju);
+            if(stockNormalSoju<0)
+            {
+                reste = -stockNormalSoju;
+                vente += stockNormalSoju;
+                stockNormalSoju = 0;
+            }
+            //stockPremiumSoju -= Convert.ToInt32(market.EstimationSojuPremiumSell[turn - 1] * proportionSellOfThisTurnPremiumSoju;
+            money += vente * priceSellBottleSojuNormal;
+            //money += ventePremiumSoju * priceSellBottleSojuPremium;
+            return reste;
         }
         /// <summary>
         /// Function to buy the classic machin and add it to the company

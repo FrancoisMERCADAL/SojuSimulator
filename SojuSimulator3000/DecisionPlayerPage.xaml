@@ -99,6 +99,30 @@
         </Rectangle>
         <Label Foreground="White"  Content="Marketing :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,570,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="marketingSell" Margin="173,589,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="355,391,0,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.012"/>
+                    <GradientStop Color="#FF3700B2" Offset="1"/>
+
+                </LinearGradientBrush>
+
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Foreground="White"  Content="Price of Normal soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="370,399,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="priceNormalSoju" Margin="466,418,0,0"/>
+        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="355,476,0,0" >
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.012"/>
+                    <GradientStop Color="#FF3700B2" Offset="1"/>
+
+                </LinearGradientBrush>
+
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Foreground="White"  Content="Price of Premium soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="370,484,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="pricePremiumSoju" Margin="466,503,0,0"/>
 
     </Grid>
 </Window>

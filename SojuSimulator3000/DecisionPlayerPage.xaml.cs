@@ -93,8 +93,15 @@ namespace SojuSimulator3000
         {
             listPlayer[numberOfPlayer - 1].ProductSoju(EssayerConvertirInt(productNormalSoju.Text), EssayerConvertirInt(productionPremiumSoju.Text));//Save in your class the production that you decided to of normal...  
             listPlayer[numberOfPlayer - 1].SpendMarketing = EssayerConvertirInt(marketingSell.Text);//And premium soju
+            listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = EssayerConvertirInt(priceNormalSoju.Text);
+            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal > 4)
+                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = 4;
+            listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium = EssayerConvertirInt(pricePremiumSoju.Text);
+            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium > 6)
+                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium = 6;
             if (numberOfPlayer==listPlayer.Count)//Check if everyone play
             {//if yes 
+                CalculateIncomeOfEachPlayerNormalSoju4Player();
                 MainPage page = new MainPage(listPlayer, market, numberOfTurn, turn);//Return to the mainPage to know the ranking
                 page.Show();
                 this.Close();
@@ -109,7 +116,7 @@ namespace SojuSimulator3000
         /// <summary>
         /// Class that it's called when everyone finished to calculate how many bottle of soju everyone sell
         /// </summary>
-        private void CalculateIncomeOfEachPlayerNormalSoju()
+        private void CalculateIncomeOfEachPlayerNormalSoju4Player()
         {
             Random rnd = new Random();
             int luckyCompany = rnd.Next(1, numberOfPlayer);
@@ -120,6 +127,40 @@ namespace SojuSimulator3000
             }
             listPlayer[luckyCompany].ProportionSellOfThisTurnNormalSoju = 0.05f;//5% of the sell is given to a company randomly just to create a part of luck
             listPlayer.Sort(Joueur.TriSellNormalSoju);
+            listPlayer[0].ProportionSellOfThisTurnNormalSoju = 0.05f;
+            listPlayer[1].ProportionSellOfThisTurnNormalSoju = 0.1f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.15f;
+            listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.20f;
+
+            listPlayer.Sort(Joueur.TriMarketing);
+            listPlayer[1].ProportionSellOfThisTurnNormalSoju = 0.05f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.10f;
+            listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.15f;
+
+            listPlayer.Sort(Joueur.TriStockNormalSoju);
+            listPlayer[1].ProportionSellOfThisTurnNormalSoju = 0.03f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.05f;
+            listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.07f;
+
+            int bouteilleRestante=0;
+            for(int i=0;i<listPlayer.Count;i++)
+            {
+                bouteilleRestante+=listPlayer[i].SellSoju(turn);
+                if(bouteilleRestante!=0&& listPlayer[i].StockNormalSoju>0)
+                {
+                    if(bouteilleRestante> listPlayer[i].StockNormalSoju)
+                    {
+                        listPlayer[i].Money += listPlayer[i].PriceSellBottleSojuNormal * bouteilleRestante;
+                        bouteilleRestante = 0;
+                    }
+                    else
+                    {
+                        listPlayer[i].Money += listPlayer[i].PriceSellBottleSojuNormal * listPlayer[i].StockNormalSoju;
+                        bouteilleRestante -= listPlayer[i].StockNormalSoju;
+                    }
+                }
+            }
+            
             //To continue, we need to find an algorithm to divide the sell of normal soju and premium soju
 
 

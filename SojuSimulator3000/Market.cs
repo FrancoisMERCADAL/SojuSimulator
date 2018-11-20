@@ -19,6 +19,8 @@ namespace SojuSimulator3000
         List<int> estimationSojuPremiumSell;
         public Market(int valueMachin, int hireWorker, int fireWorker,int salaryWorker, int maintenanceMachin, float priceIngredientsSojuNormal, float priceIngredientsSojuPremium)
         {
+            estimationSojuNormalSell = new List<int>();
+            estimationSojuPremiumSell = new List<int>();
             this.valueMachin = valueMachin;
             this.hireWorker = hireWorker;
             this.fireWorker = fireWorker;
