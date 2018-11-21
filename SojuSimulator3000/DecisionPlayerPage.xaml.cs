@@ -39,6 +39,8 @@ namespace SojuSimulator3000
             priceIngNormalSoju.Content = priceIngNormalSoju.Content + " " + market.PriceIngredientsSojuNormal;
             priceIngPremiumSoju.Content = priceIngPremiumSoju.Content + " " + market.PriceIngredientsSojuPremium;
             priceMachines.Content = priceMachines.Content + " " + market.ValueMachin;
+            stockNormalSoju.Content = stockNormalSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockNormalSoju;
+            stockPremiumSoju.Content = stockPremiumSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockPremiumSoju;
             AfficherMoney();
         }
         /// <summary>

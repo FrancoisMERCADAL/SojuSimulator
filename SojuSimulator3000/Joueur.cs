@@ -29,6 +29,7 @@ namespace SojuSimulator3000
         public int StockNormalSoju { get => stockNormalSoju; set => stockNormalSoju = value; }
         public float PriceSellBottleSojuNormal { get => priceSellBottleSojuNormal; set => priceSellBottleSojuNormal = value; }
         public float PriceSellBottleSojuPremium { get => priceSellBottleSojuPremium; set => priceSellBottleSojuPremium = value; }
+        public int StockPremiumSoju { get => stockPremiumSoju; set => stockPremiumSoju = value; }
 
         public Joueur(string name, float money, Market market)
         {
@@ -45,6 +46,8 @@ namespace SojuSimulator3000
         }
         public void ProductSoju(int numberOfNormalSoju, int numberOfPremiumSoju)
         {
+            numberOfNormalSoju = BottleToProduct(numberOfNormalSoju);
+            numberOfPremiumSoju = BottleToProduct(numberOfPremiumSoju);
             stockNormalSoju += numberOfNormalSoju;
             stockPremiumSoju += numberOfPremiumSoju;
             money -= numberOfSalary * market.SalaryWorker;
@@ -156,6 +159,17 @@ namespace SojuSimulator3000
         static public int TriStockPremiumSoju(Joueur j1, Joueur j2)
         {
             return j1.stockPremiumSoju.CompareTo(j2.stockPremiumSoju);
+        }
+
+        public int BottleToProduct(int number)
+        {
+            if (number < 0)
+                number = 0;
+
+            if (number > numberOfSalary * 2500)
+                number = numberOfSalary * 2500;
+            return number;
+                
         }
     }
 }

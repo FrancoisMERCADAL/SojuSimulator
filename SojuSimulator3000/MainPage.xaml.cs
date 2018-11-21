@@ -58,8 +58,8 @@ namespace SojuSimulator3000
         public void TexteInformationTurn()
         {
             textNextTurn = "Here the estimation of this year : \n";
-            //textNextTurn += "Sell of Normal Soju :" + market.EstimationSojuNormalSell[turn-1];
-            //textNextTurn += "\nSell of Premium Soju : " + market.EstimationSojuPremiumSell[turn-1];
+            textNextTurn += "Sell of Normal Soju :" + market.EstimationSojuNormalSell[turn-1];
+            textNextTurn += "\nSell of Premium Soju : " + market.EstimationSojuPremiumSell[turn-1];
             informationTurn.Content = textNextTurn;
         }
 

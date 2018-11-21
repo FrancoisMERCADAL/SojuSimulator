@@ -123,6 +123,8 @@
         </Rectangle>
         <Label Foreground="White"  Content="Price of Premium soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="370,484,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="pricePremiumSoju" Margin="466,503,0,0"/>
+        <Label Foreground="White"  Content="Stock Normal Soju :" HorizontalAlignment="Left" Margin="414,324,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockNormalSoju"/>
+        <Label Foreground="White"  Content="Stock Premium Soju :" HorizontalAlignment="Left" Margin="414,357,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockPremiumSoju"/>
 
     </Grid>
 </Window>
