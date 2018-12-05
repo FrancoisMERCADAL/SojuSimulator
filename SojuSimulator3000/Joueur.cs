@@ -44,17 +44,14 @@ namespace SojuSimulator3000
             stockPremiumSoju = 0;
             this.market = market;
         }
-        public void ProductSoju(int numberOfNormalSoju, int numberOfPremiumSoju)
+        public void ProductSoju(int numberOfNormalSoju)
         {
             numberOfNormalSoju = BottleToProduct(numberOfNormalSoju);
-            numberOfPremiumSoju = BottleToProduct(numberOfPremiumSoju);
             stockNormalSoju += numberOfNormalSoju;
-            stockPremiumSoju += numberOfPremiumSoju;
             money -= numberOfSalary * market.SalaryWorker;
             for(int i =0;i<numberOfMachin.Count;i++)
                 money -= numberOfMachin[i].PriceMaintenance;
             money -= numberOfNormalSoju * market.PriceIngredientsSojuNormal;
-            money -= numberOfPremiumSoju * market.PriceIngredientsSojuPremium;
         }
         public int SellSoju(int turn)
         {
@@ -77,7 +74,7 @@ namespace SojuSimulator3000
         /// </summary>
         public void BuyANewMachinClassic()
         {
-            numberOfMachin.Add(new Machin(5,2000,1000));
+            numberOfMachin.Add(new Machin(5,80000,5000000));
             money -= market.ValueMachin;
         }
         /// <summary>
@@ -86,7 +83,6 @@ namespace SojuSimulator3000
         public void HireNewSalary()
         {
             numberOfSalary++;
-            money -= market.HireWorker;
         }
         /// <summary>
         /// Function to fire a salary of the company
@@ -166,8 +162,8 @@ namespace SojuSimulator3000
             if (number < 0)
                 number = 0;
 
-            if (number > numberOfSalary * 2500)
-                number = numberOfSalary * 2500;
+            if (number > numberOfSalary * 16000)
+                number = numberOfSalary * 16000;
             return number;
                 
         }

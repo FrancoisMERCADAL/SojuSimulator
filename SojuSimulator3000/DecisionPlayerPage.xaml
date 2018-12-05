@@ -62,7 +62,6 @@
         <Label Foreground="White"  Content="Price Machins :" HorizontalAlignment="Left" Margin="414,191,0,0" VerticalAlignment="Top" Width="315" FontSize="20" FontWeight="Bold" Height="42" x:Name="priceMachines"/>
         <Label Foreground="White"  Content="Price Hire Workers :" HorizontalAlignment="Left" Margin="414,225,0,0" VerticalAlignment="Top" Width="355" FontSize="20" FontWeight="Bold" Height="33" x:Name="priceHireWorkers"/>
         <Label Foreground="White"  Content="Price ingredients normal soju :" HorizontalAlignment="Left" Margin="414,258,0,0" VerticalAlignment="Top" Width="399" FontSize="20" FontWeight="Bold" Height="32" x:Name="priceIngNormalSoju"/>
-        <Label Foreground="White"  Content="Price ingredients premium soju :" HorizontalAlignment="Left" Margin="414,290,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="priceIngPremiumSoju"/>
         <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="62,391,0,0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -75,18 +74,6 @@
         </Rectangle>
         <Label Foreground="White"  Content="Number of Normal soju&#xA;To product :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,399,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="productNormalSoju" Margin="173,418,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="62,476,0,0" >
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.012"/>
-                    <GradientStop Color="#FF3700B2" Offset="1"/>
-
-                </LinearGradientBrush>
-
-            </Rectangle.Fill>
-        </Rectangle>
-        <Label Foreground="White"  Content="Number of Premium soju&#xA;To product :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,484,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="productionPremiumSoju" Margin="173,502,0,0"/>
         <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="62,562,0,0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -99,7 +86,7 @@
         </Rectangle>
         <Label Foreground="White"  Content="Marketing :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,570,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="marketingSell" Margin="173,589,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="355,391,0,0" >
+        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="62,473,0,0" >
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0.012"/>
@@ -109,22 +96,12 @@
 
             </Rectangle.Fill>
         </Rectangle>
-        <Label Foreground="White"  Content="Price of Normal soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="370,399,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="priceNormalSoju" Margin="466,418,0,0"/>
-        <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="355,476,0,0" >
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black" Offset="0.012"/>
-                    <GradientStop Color="#FF3700B2" Offset="1"/>
-
-                </LinearGradientBrush>
-
-            </Rectangle.Fill>
-        </Rectangle>
-        <Label Foreground="White"  Content="Price of Premium soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="370,484,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="pricePremiumSoju" Margin="466,503,0,0"/>
-        <Label Foreground="White"  Content="Stock Normal Soju :" HorizontalAlignment="Left" Margin="414,324,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockNormalSoju"/>
-        <Label Foreground="White"  Content="Stock Premium Soju :" HorizontalAlignment="Left" Margin="414,357,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockPremiumSoju"/>
+        <Label Foreground="White"  Content="Price of Normal soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,481,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="priceNormalSoju" Margin="173,500,0,0"/>
+        <Label Foreground="White"  Content="Stock Normal Soju :" HorizontalAlignment="Left" Margin="414,290,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockNormalSoju"/>
+        <Label Foreground="White"  Content="One worker can produce 16000 bottle" HorizontalAlignment="Left" Margin="414,320,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
+        <Label Foreground="White"  Content="The limit of price is between 800 and 3000" HorizontalAlignment="Left" Margin="414,348,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
+        <Label Foreground="White"  Content="The price of the ingredients for one bottle is 700" HorizontalAlignment="Left" Margin="414,376,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
 
     </Grid>
 </Window>

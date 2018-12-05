@@ -35,12 +35,9 @@ namespace SojuSimulator3000
             nombreSalarie.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfSalary);//Show the actual number of salary you have
             nombreMachin.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfMachin.Count);//Show the actual number of machines you have
             this.numberOfTurn = numberOfTurn;
-            priceHireWorkers.Content = priceHireWorkers.Content + " " + market.HireWorker;//Permit to show to the player the price of the market
             priceIngNormalSoju.Content = priceIngNormalSoju.Content + " " + market.PriceIngredientsSojuNormal;
-            priceIngPremiumSoju.Content = priceIngPremiumSoju.Content + " " + market.PriceIngredientsSojuPremium;
             priceMachines.Content = priceMachines.Content + " " + market.ValueMachin;
             stockNormalSoju.Content = stockNormalSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockNormalSoju;
-            stockPremiumSoju.Content = stockPremiumSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockPremiumSoju;
             AfficherMoney();
         }
         /// <summary>
@@ -93,20 +90,29 @@ namespace SojuSimulator3000
         /// <param name="e"></param>
         private void Next(object sender, RoutedEventArgs e)
         {
-            listPlayer[numberOfPlayer - 1].ProductSoju(EssayerConvertirInt(productNormalSoju.Text), EssayerConvertirInt(productionPremiumSoju.Text));//Save in your class the production that you decided to of normal...  
+            listPlayer[numberOfPlayer - 1].ProductSoju(EssayerConvertirInt(productNormalSoju.Text));//Save in your class the production that you decided to of normal...  
             listPlayer[numberOfPlayer - 1].SpendMarketing = EssayerConvertirInt(marketingSell.Text);//And premium soju
             listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = EssayerConvertirInt(priceNormalSoju.Text);
-            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal > 4)
-                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = 4;
-            listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium = EssayerConvertirInt(pricePremiumSoju.Text);
-            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium > 6)
-                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuPremium = 6;
+            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal > 3000)
+                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = 3000;
+            if (listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal < 800)
+                listPlayer[numberOfPlayer - 1].PriceSellBottleSojuNormal = 800;
             if (numberOfPlayer==listPlayer.Count)//Check if everyone play
             {//if yes 
+                
                 CalculateIncomeOfEachPlayerNormalSoju4Player();
-                MainPage page = new MainPage(listPlayer, market, numberOfTurn, turn);//Return to the mainPage to know the ranking
-                page.Show();
-                this.Close();
+                if (turn == numberOfTurn)
+                {
+                    EndGame pageEnd = new EndGame(listPlayer, market);
+                    pageEnd.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MainPage page = new MainPage(listPlayer, market, numberOfTurn, turn);//Return to the mainPage to know the ranking
+                    page.Show();
+                    this.Close();
+                }
             }
             else
             {//else call the same page but for the next player
@@ -140,8 +146,8 @@ namespace SojuSimulator3000
             listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.15f;
 
             listPlayer.Sort(Joueur.TriStockNormalSoju);
-            listPlayer[1].ProportionSellOfThisTurnNormalSoju = 0.03f;
-            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.05f;
+            listPlayer[0].ProportionSellOfThisTurnNormalSoju = 0.05f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.03f;
             listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.07f;
 
             int bouteilleRestante=0;

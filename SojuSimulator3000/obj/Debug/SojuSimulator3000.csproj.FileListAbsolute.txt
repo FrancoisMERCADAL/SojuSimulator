@@ -25,3 +25,5 @@ D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSi
 D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\DecisionPlayerPage.baml
 D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\MainPage.baml
 D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\ReportTurn.baml
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\EndGame.g.cs
+D:\Utilisateurs\sebas\Documents\ESILV\Hanyang\SojuSimulator\SojuSimulator\SojuSimulator3000\obj\Debug\EndGame.baml

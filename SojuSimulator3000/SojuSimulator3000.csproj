@@ -64,6 +64,9 @@
     <Compile Include="DecisionPlayerPage.xaml.cs">
       <DependentUpon>DecisionPlayerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EndGame.xaml.cs">
+      <DependentUpon>EndGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
       <DependentUpon>ReportTurn.xaml</DependentUpon>
     </Compile>
     <Page Include="DecisionPlayerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EndGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
