@@ -38,7 +38,10 @@ namespace SojuSimulator3000
             priceIngNormalSoju.Content = priceIngNormalSoju.Content + " " + market.PriceIngredientsSojuNormal;
             priceMachines.Content = priceMachines.Content + " " + market.ValueMachin;
             stockNormalSoju.Content = stockNormalSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockNormalSoju;
+            estimationBottle.Content += Convert.ToString(market.EstimationSojuNormalSell[turn - 1]);
             AfficherMoney();
+            nameAffiche.Content += listPlayer[numberOfPlayer - 1].Name;
+            priceFireWorkers.Content += Convert.ToString(market.FireWorker);
         }
         /// <summary>
         /// Print the amount of money of the player who is playing
@@ -168,7 +171,7 @@ namespace SojuSimulator3000
                     }
                 }
             }
-            
+            listPlayer.Sort();
             //To continue, we need to find an algorithm to divide the sell of normal soju and premium soju
 
 

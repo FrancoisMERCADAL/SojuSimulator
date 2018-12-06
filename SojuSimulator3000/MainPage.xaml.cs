@@ -41,7 +41,7 @@ namespace SojuSimulator3000
             InitializeComponent();
             this.market = market;
             this.numberOfTurn = numberOfTurn;
-            this.turn = turn;
+            this.turn = turn+1;
             TexteClassement();
             TexteInformationTurn();
         }
@@ -51,7 +51,7 @@ namespace SojuSimulator3000
             textRanking = "The actual ranking is : \n";
             for(int i = 0;i<listPlayer.Count;i++)
             {
-                textRanking += (i+1) + ") " + listPlayer[i].Name + " with " + listPlayer[i].Money + "€.\n";
+                textRanking += (i+1) + ") " + listPlayer[i].Name + " with " + listPlayer[i].Money + "KW.\n";
             }
             labelRanking.Content = textRanking;
         }
@@ -59,6 +59,7 @@ namespace SojuSimulator3000
         {
             textNextTurn = "Here the estimation of this year : \n";
             textNextTurn += "Sell of Normal Soju :" + market.EstimationSojuNormalSell[turn-1];
+            textNextTurn += "\nTurn :" + this.turn;
             informationTurn.Content = textNextTurn;
         }
 

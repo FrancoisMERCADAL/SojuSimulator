@@ -95,9 +95,9 @@ namespace SojuSimulator3000
         public int CompareTo(Joueur autre)
         {
             int val = 0;
-            if (this.money.CompareTo(autre.money) < 0)
-                val = -1;
             if (this.money.CompareTo(autre.money) > 0)
+                val = -1;
+            if (this.money.CompareTo(autre.money) < 0)
                 val = 1;
             return val;
 

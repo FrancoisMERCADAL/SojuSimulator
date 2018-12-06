@@ -25,7 +25,7 @@
 
         <Image Margin="831,47,45.6,112.4" RenderTransformOrigin="0.25,0.45" Source="soju3.png" Grid.ColumnSpan="2"/>
 
-        <Label Foreground="White"  Content="SojuSimulator3000" HorizontalAlignment="Left" Margin="374,6,0,0" VerticalAlignment="Top" Width="410" FontSize="40" FontWeight="Bold" Height="61"/>
+        <Label Foreground="White"  Content="SojuSimulator3000&#xA;Name Player : " HorizontalAlignment="Left" Margin="374,6,0,0" VerticalAlignment="Top" Width="410" FontSize="40" FontWeight="Bold" Height="102" x:Name="nameAffiche"/>
 
         <Button Content="Next" Background="#131641" HorizontalAlignment="Left" Margin="891,614,0,0" VerticalAlignment="Top" Width="310" RenderTransformOrigin="0.338,2.35" Click="Next" Visibility="Visible" x:Name="StartGame" Grid.ColumnSpan="2"/>
         <Rectangle HorizontalAlignment="Left" Height="67" Margin="62,295,0,0" VerticalAlignment="Top" Width="249" >
@@ -60,7 +60,7 @@
         <materialDesign:PackIcon Kind="Minus" RenderTransformOrigin="1.531,7.5" Margin="233,329,0,0" Foreground="#DDFFFFFF" Width="20" Height="20" IsEnabled="False"/>
         <Label Foreground="White"  Content="Money :" HorizontalAlignment="Left" Margin="62,125,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontWeight="Bold" Height="42" x:Name="money"/>
         <Label Foreground="White"  Content="Price Machins :" HorizontalAlignment="Left" Margin="414,191,0,0" VerticalAlignment="Top" Width="315" FontSize="20" FontWeight="Bold" Height="42" x:Name="priceMachines"/>
-        <Label Foreground="White"  Content="Price Hire Workers :" HorizontalAlignment="Left" Margin="414,225,0,0" VerticalAlignment="Top" Width="355" FontSize="20" FontWeight="Bold" Height="33" x:Name="priceHireWorkers"/>
+        <Label Foreground="White"  Content="Price Fire Workers :" HorizontalAlignment="Left" Margin="414,225,0,0" VerticalAlignment="Top" Width="355" FontSize="20" FontWeight="Bold" Height="33" x:Name="priceFireWorkers"/>
         <Label Foreground="White"  Content="Price ingredients normal soju :" HorizontalAlignment="Left" Margin="414,258,0,0" VerticalAlignment="Top" Width="399" FontSize="20" FontWeight="Bold" Height="32" x:Name="priceIngNormalSoju"/>
         <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" Margin="62,391,0,0" >
             <Rectangle.Fill>
@@ -98,10 +98,10 @@
         </Rectangle>
         <Label Foreground="White"  Content="Price of Normal soju :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46" Margin="77,481,0,0"/>
         <TextBox HorizontalAlignment="Left" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122" Foreground="White" CaretBrush="White" SelectionBrush="White" BorderBrush="White" BorderThickness="0,0,0,2" x:Name="priceNormalSoju" Margin="173,500,0,0"/>
-        <Label Foreground="White"  Content="Stock Normal Soju :" HorizontalAlignment="Left" Margin="414,290,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockNormalSoju"/>
+        <Label Foreground="White"  Content="Stock Soju :" HorizontalAlignment="Left" Margin="414,290,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="stockNormalSoju"/>
         <Label Foreground="White"  Content="One worker can produce 16000 bottle" HorizontalAlignment="Left" Margin="414,320,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
         <Label Foreground="White"  Content="The limit of price is between 800 and 3000" HorizontalAlignment="Left" Margin="414,348,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
-        <Label Foreground="White"  Content="The price of the ingredients for one bottle is 700" HorizontalAlignment="Left" Margin="414,376,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42"/>
+        <Label Foreground="White"  Content="Estimation bottle of this year :" HorizontalAlignment="Left" Margin="414,376,0,0" VerticalAlignment="Top" Width="412" FontSize="20" FontWeight="Bold" Height="42" x:Name="estimationBottle"/>
 
     </Grid>
 </Window>
