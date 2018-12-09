@@ -54,8 +54,10 @@
         </Rectangle>
         <Label Foreground="White"  Content="Number of machines :" HorizontalAlignment="Left" Margin="77,199,0,0" VerticalAlignment="Top" Width="218" FontSize="14" FontWeight="Bold" Height="46"/>
         <TextBox HorizontalAlignment="Left" Height="25" IsEnabled="False" Margin="77,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Foreground="White" FontSize="14" FontWeight="Bold" x:Name="nombreMachin" BorderBrush="{x:Null}" Background="{x:Null}"/>
-        <Button Content="" Margin="258,220,0,0" Click="AjouterMachine_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
-        <materialDesign:PackIcon Kind="Plus" RenderTransformOrigin="1.531,7.5" Margin="263,225,0,0" Foreground="#DDFFFFFF" Width="20" Height="20" IsEnabled="False"/>
+        <Button Content="" Margin="270,220,0,0" Click="AjouterMachine_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
+        <materialDesign:PackIcon Kind="Plus" RenderTransformOrigin="1.531,7.5" Margin="275,225,0,0" Foreground="#DDFFFFFF" Width="20" Height="20" IsEnabled="False"/>
+        <Button Click="Retirer_machine_Click" Content="" Margin="228,220,0,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
+        <materialDesign:PackIcon Kind="Minus" RenderTransformOrigin="1.531,7.5" Margin="233,225,0,0" Foreground="#DDFFFFFF" Width="20" Height="20" IsEnabled="False"/>
         <Button Content="" Margin="228,324,0,0" Click="DeleteSalarie_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" Width="29" />
         <materialDesign:PackIcon Kind="Minus" RenderTransformOrigin="1.531,7.5" Margin="233,329,0,0" Foreground="#DDFFFFFF" Width="20" Height="20" IsEnabled="False"/>
         <Label Foreground="White"  Content="Money :" HorizontalAlignment="Left" Margin="62,125,0,0" VerticalAlignment="Top" Width="315" FontSize="25" FontWeight="Bold" Height="42" x:Name="money"/>

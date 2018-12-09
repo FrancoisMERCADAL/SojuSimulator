@@ -31,6 +31,7 @@ namespace SojuSimulator3000
         
         private void StartGames(object sender, RoutedEventArgs e)
         {
+            Random random = new Random();
             List<Joueur> listPlayer = new List<Joueur>();
             listPlayer.Add(new Joueur(namePlayer1.Text, money, market));
             listPlayer.Add(new Joueur(namePlayer2.Text, money, market));
@@ -39,9 +40,10 @@ namespace SojuSimulator3000
             
             for (int i = 0; i < 10; i++)
             {
-                Random random = new Random();
                 int valueOfThisTurn = random.Next(-1, 3);
-                market.EstimationSojuNormalSell.Add(listPlayer.Count* 90000 + i * 5000+i*10000*valueOfThisTurn);
+                
+                market.EstimationSojuNormalSell.Add(listPlayer.Count* 90000 + i * 10000 +i*5000*valueOfThisTurn);
+                MessageBox.Show(Convert.ToString(market.EstimationSojuNormalSell[i]));
             }
             ReportTurn page = new ReportTurn(listPlayer, market, 15);//15 is the number of turn to modificate after
             page.Show();

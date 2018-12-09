@@ -69,6 +69,17 @@ namespace SojuSimulator3000
             //money += ventePremiumSoju * priceSellBottleSojuPremium;
             return reste;
         }
+
+        public void FeeDebt()
+        {
+            float inter = 0;
+            if(money<0)
+            {
+                inter = -money;
+                inter = inter * 0.15f;
+                money -= inter;
+            }
+        }
         /// <summary>
         /// Function to buy the classic machin and add it to the company
         /// </summary>
@@ -76,6 +87,16 @@ namespace SojuSimulator3000
         {
             numberOfMachin.Add(new Machin(5,80000,5000000));
             money -= market.ValueMachin;
+        }
+        public void SellMachineClassic()
+        {
+            numberOfMachin.RemoveAt(0);
+            money += 15000000;
+        }
+        public void GiveMachineBack()
+        {
+            numberOfMachin.RemoveAt(0);
+            money += 40000000;
         }
         /// <summary>
         /// Method to add a salary to the company

@@ -21,6 +21,7 @@ namespace SojuSimulator3000
     {
         int turn;
         int numberOfPlayer;
+        int numberOfMachines;
         List<Joueur> listPlayer;
         Market market;
         int numberOfTurn;
@@ -35,6 +36,7 @@ namespace SojuSimulator3000
             nombreSalarie.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfSalary);//Show the actual number of salary you have
             nombreMachin.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfMachin.Count);//Show the actual number of machines you have
             this.numberOfTurn = numberOfTurn;
+            this.numberOfMachines = listPlayer[numberOfPlayer - 1].NumberOfMachin.Count;
             priceIngNormalSoju.Content = priceIngNormalSoju.Content + " " + market.PriceIngredientsSojuNormal;
             priceMachines.Content = priceMachines.Content + " " + market.ValueMachin;
             stockNormalSoju.Content = stockNormalSoju.Content + " " + listPlayer[numberOfPlayer - 1].StockNormalSoju;
@@ -144,14 +146,14 @@ namespace SojuSimulator3000
             listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.20f;
 
             listPlayer.Sort(Joueur.TriMarketing);
-            listPlayer[1].ProportionSellOfThisTurnNormalSoju = 0.05f;
-            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.10f;
-            listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.15f;
+            listPlayer[1].ProportionSellOfThisTurnNormalSoju += 0.05f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju += 0.10f;
+            listPlayer[3].ProportionSellOfThisTurnNormalSoju += 0.15f;
 
             listPlayer.Sort(Joueur.TriStockNormalSoju);
-            listPlayer[0].ProportionSellOfThisTurnNormalSoju = 0.05f;
-            listPlayer[2].ProportionSellOfThisTurnNormalSoju = 0.03f;
-            listPlayer[3].ProportionSellOfThisTurnNormalSoju = 0.07f;
+            listPlayer[0].ProportionSellOfThisTurnNormalSoju += 0.05f;
+            listPlayer[2].ProportionSellOfThisTurnNormalSoju += 0.03f;
+            listPlayer[3].ProportionSellOfThisTurnNormalSoju += 0.07f;
 
             int bouteilleRestante=0;
             for(int i=0;i<listPlayer.Count;i++)
@@ -170,6 +172,7 @@ namespace SojuSimulator3000
                         bouteilleRestante -= listPlayer[i].StockNormalSoju;
                     }
                 }
+                listPlayer[i].FeeDebt();
             }
             listPlayer.Sort();
             //To continue, we need to find an algorithm to divide the sell of normal soju and premium soju
@@ -193,6 +196,21 @@ namespace SojuSimulator3000
                 aRetourner = 0;
             }
             return aRetourner;
+        }
+
+        private void Retirer_machine_Click(object sender, RoutedEventArgs e)
+        {
+            if(listPlayer[numberOfPlayer - 1].NumberOfMachin.Count > numberOfMachines)
+            {
+                listPlayer[numberOfPlayer - 1].GiveMachineBack();
+            }
+            else
+            {
+                listPlayer[numberOfPlayer - 1].SellMachineClassic();
+            }
+
+            nombreMachin.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfMachin.Count);
+            AfficherMoney();
         }
     }
 }
