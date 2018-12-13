@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Image Margin="445,77,231.6,82.4" RenderTransformOrigin="0.25,0.45" Source="soju.jpg"/>
+        <Image Margin="445,77,231.6,82.4" RenderTransformOrigin="0.25,0.45" Source="/SojuSimulator3000;component/bin/soju.jpg"/>
         <Canvas Margin="62,196,762.6,427.4" Visibility="Visible" x:Name="Player1">
             <Rectangle HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="249" >
                 <Rectangle.Fill>

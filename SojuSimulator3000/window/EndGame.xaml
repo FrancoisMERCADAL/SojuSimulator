@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Image Margin="420,40,256.6,119.4" RenderTransformOrigin="0.25,0.45" Source="soju2.jpg"/>
+        <Image Margin="420,40,256.6,119.4" RenderTransformOrigin="0.25,0.45" Source="/SojuSimulator3000;component/bin/soju2.jpg"/>
         <Label Foreground="White" x:Name="labelRanking" HorizontalAlignment="Left" Margin="59,152,0,0" VerticalAlignment="Top" Width="356" FontSize="22" FontWeight="Bold" Height="387" Visibility="Visible"/>
 
         <Label Foreground="White"  Content="SojuSimulator3000" HorizontalAlignment="Left" Margin="435,58,0,0" VerticalAlignment="Top" Width="410" FontSize="40" FontWeight="Bold" Height="61"/>

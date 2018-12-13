@@ -23,7 +23,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Image Margin="831,47,45.6,112.4" RenderTransformOrigin="0.25,0.45" Source="soju3.png" Grid.ColumnSpan="2"/>
+        <Image Margin="831,47,45.6,112.4" RenderTransformOrigin="0.25,0.45" Source="/SojuSimulator3000;component/bin/soju3.png" Grid.ColumnSpan="2"/>
 
         <Label Foreground="White"  Content="SojuSimulator3000&#xA;Name Player : " HorizontalAlignment="Left" Margin="374,6,0,0" VerticalAlignment="Top" Width="410" FontSize="40" FontWeight="Bold" Height="102" x:Name="nameAffiche"/>
 
