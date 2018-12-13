@@ -90,8 +90,11 @@ namespace SojuSimulator3000
         }
         public void SellMachineClassic()
         {
-            numberOfMachin.RemoveAt(0);
-            money += 15000000;
+            if (numberOfMachin.Count > 0)
+            {
+                numberOfMachin.RemoveAt(0);
+                money += 15000000;
+            }
         }
         public void GiveMachineBack()
         {

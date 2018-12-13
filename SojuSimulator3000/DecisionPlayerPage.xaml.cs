@@ -84,9 +84,12 @@ namespace SojuSimulator3000
         /// <param name="e"></param>
         private void DeleteSalarie_Click(object sender, RoutedEventArgs e)
         {
-            listPlayer[numberOfPlayer - 1].FireSalary();
-            nombreSalarie.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfSalary);
-            AfficherMoney();
+            if (listPlayer[numberOfPlayer-1].NumberOfSalary > 0)
+            {
+                listPlayer[numberOfPlayer - 1].FireSalary();
+                nombreSalarie.Text = Convert.ToString(listPlayer[numberOfPlayer - 1].NumberOfSalary);
+                AfficherMoney();
+            }
         }
         /// <summary>
         /// Function that is called to finish your turn

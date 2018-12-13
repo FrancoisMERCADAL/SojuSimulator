@@ -43,7 +43,6 @@ namespace SojuSimulator3000
                 int valueOfThisTurn = random.Next(-1, 3);
                 
                 market.EstimationSojuNormalSell.Add(listPlayer.Count* 90000 + i * 10000 +i*5000*valueOfThisTurn);
-                MessageBox.Show(Convert.ToString(market.EstimationSojuNormalSell[i]));
             }
             ReportTurn page = new ReportTurn(listPlayer, market, 15);//15 is the number of turn to modificate after
             page.Show();
